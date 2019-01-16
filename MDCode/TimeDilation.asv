@@ -1,0 +1,19 @@
+function [dilStat] = TimeDilation(Fx, Fy)
+global Fmax
+
+firstRun = exist(Fmax,'var');
+
+if firstRun
+    Fmax = max(Fx,Fy);
+    dilStat = false;
+else
+    dilateLimit = 10*Fmax;
+    if(Fx > dilateLimit)
+        fprintf("Halving time interval");
+        dilStat = true;
+    end
+end
+
+dilStat = 
+end
+
